@@ -148,7 +148,10 @@ declare namespace Api {
         RoleListItem,
         'roleId' | 'roleName' | 'roleCode' | 'description' | 'enabled' | 'startTime' | 'endTime'
       > &
-        Api.Common.CommonSearchParams
+        Api.Common.CommonSearchParams & {
+          startTime: string | null
+          endTime: string | null
+        }
     >
   }
 

@@ -4,39 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8f35119-660a-46e7-82f4-53eee06863eb" name="Changes" comment="fix eslint error">
-      <change afterPath="$PROJECT_DIR$/src/types/directive/directive.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/forms/art-form/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/forms/art-form/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/forms/art-search-bar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/forms/art-search-bar/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/forms/art-wang-editor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/forms/art-wang-editor/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/forms/art-wang-editor/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/forms/art-wang-editor/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-global-search/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-global-search/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-horizontal-menu/widget/HorizontalSubmenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-horizontal-menu/widget/HorizontalSubmenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/widget/SidebarSubmenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-menus/art-sidebar-menu/widget/SidebarSubmenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/layouts/art-settings-panel/composables/useSettingsPanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/layouts/art-settings-panel/composables/useSettingsPanel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/tables/art-table/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/tables/art-table/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/views/exception/ArtException.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/views/exception/ArtException.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/business/highlight.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/business/highlight.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/business/ripple.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/business/ripple.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/core/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/core/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/core/roles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/core/roles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/upgrade/changeLog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/upgrade/changeLog.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/core/MenuProcessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/core/MenuProcessor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/core/RoutePermissionValidator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/core/RoutePermissionValidator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/guards/beforeEach.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/guards/beforeEach.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/component/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/component/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/navigation/jump.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/navigation/jump.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/navigation/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/navigation/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/socket/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/socket/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/storage/storage-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/storage/storage-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sys/error-handle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sys/error-handle.ts" afterDir="false" />
+    <list default="true" id="b8f35119-660a-46e7-82f4-53eee06863eb" name="Changes" comment="merge &#10;version : 3.0.2&#10;date : 2026/03/23">
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/core/useTable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/core/useTable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/api/api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/api/api.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +168,7 @@
       <workItem from="1769588355159" duration="448000" />
       <workItem from="1769588954114" duration="3004000" />
       <workItem from="1769647610768" duration="6039000" />
-      <workItem from="1774230598295" duration="2089000" />
+      <workItem from="1774230598295" duration="4174000" />
     </task>
     <task id="LOCAL-00001" summary="feat project clean">
       <option name="closed" value="true" />
@@ -415,7 +386,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769568623715</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="merge &#10;version : 3.0.2&#10;date : 2026/03/23">
+      <option name="closed" value="true" />
+      <created>1774234746266</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1774234746266</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +445,8 @@
     <MESSAGE value="fix sql console" />
     <MESSAGE value="feat sql result table add right menu" />
     <MESSAGE value="fix eslint error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix eslint error" />
+    <MESSAGE value="merge &#10;version : 3.0.2&#10;date : 2026/03/23" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge &#10;version : 3.0.2&#10;date : 2026/03/23" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
