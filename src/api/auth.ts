@@ -36,6 +36,41 @@ export async function login(params: Api.Auth.RegisterParams) {
     }
   )
 }
+/*忘记密码*/
+export async function forgetPassword(params: Api.Auth.ForgetPwdParams) {
+  const { email, redirectTo } = params
+  return await responseHandle(
+    () =>
+      supabase.auth.resetPasswordForEmail(email, {
+        redirectTo
+      }),
+    {
+      ignoreCheck: true,
+      breakReturn: true,
+      showErrorMessage: true
+    }
+  )
+}
+
+/*重置密码*/
+export async function resetPassword(params: Pick<Api.Auth.RegisterParams, 'password'>) {
+  const { password } = params
+  const { data, error } = await supabase.auth.getSession()
+  if (error || !data.session) {
+    throw new Error('无效或已过期的重置链接')
+  }
+  return await responseHandle(
+    () =>
+      supabase.auth.updateUser({
+        password
+      }),
+    {
+      ignoreCheck: true,
+      breakReturn: true,
+      showErrorMessage: true
+    }
+  )
+}
 
 /**
  * 获取用户信息

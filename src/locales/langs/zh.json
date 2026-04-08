@@ -183,7 +183,8 @@
       "passwordMismatch": "两次输入密码不一致!",
       "usernameLength": "长度在 3 到 20 个字符",
       "passwordLength": "密码长度不能小于6位",
-      "agreementRequired": "请同意隐私协议"
+      "agreementRequired": "请同意隐私协议",
+      "emailIncorrect": "邮箱有误"
     },
     "agreeText": "我同意",
     "privacyPolicy": "《隐私政策》",
@@ -225,6 +226,9 @@
     },
     "forgetPassword": {
       "title": "忘记密码"
+    },
+    "resetPassword": {
+      "title": "重置密码"
     },
     "outside": {
       "title": "内嵌页面"

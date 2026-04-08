@@ -10,19 +10,22 @@
           <h3 class="title">{{ $t('forgetPassword.title') }}</h3>
           <p class="sub-title">{{ $t('forgetPassword.subTitle') }}</p>
           <div class="mt-5">
-            <span class="input-label" v-if="showInputLabel">账号</span>
-            <ElInput
-              class="custom-height"
-              :placeholder="$t('forgetPassword.placeholder')"
-              v-model.trim="username"
-            />
+            <ElForm ref="formRef" :model="form" :rules="rules">
+              <ElFormItem prop="email">
+                <ElInput
+                  class="custom-height"
+                  :placeholder="$t('forgetPassword.placeholder')"
+                  v-model.trim="form.email"
+                />
+              </ElFormItem>
+            </ElForm>
           </div>
 
-          <div style="margin-top: 15px">
+          <div class="mt-[15px]">
             <ElButton
               class="w-full custom-height"
               type="primary"
-              @click="register"
+              @click="handleSubmit"
               :loading="loading"
               v-ripple
             >
@@ -30,7 +33,7 @@
             </ElButton>
           </div>
 
-          <div style="margin-top: 15px">
+          <div class="mt-[15px]">
             <ElButton class="w-full custom-height" plain @click="toLogin">
               {{ $t('forgetPassword.backBtnText') }}
             </ElButton>
@@ -42,15 +45,48 @@
 </template>
 
 <script setup lang="ts">
+  import type { FormRules } from 'element-plus'
+  import { useI18n } from 'vue-i18n'
+  import { forgetPassword } from '@/api/auth'
+
   defineOptions({ name: 'ForgetPassword' })
 
+  const { t } = useI18n()
   const router = useRouter()
-  const showInputLabel = ref(false)
 
-  const username = ref('')
+  const formRef = ref<HTMLFormElement | null>(null)
+  const form = ref({
+    email: ''
+  })
+
+  const rules = computed<FormRules<{ email: string }>>(() => ({
+    email: [
+      { required: true, message: t('register.placeholder.email'), trigger: 'change' },
+      {
+        type: 'email',
+        message: t('register.rule.emailIncorrect'),
+        trigger: 'change'
+      }
+    ]
+  }))
   const loading = ref(false)
 
-  const register = async () => {}
+  const handleSubmit = async () => {
+    await formRef.value?.validate()
+    try {
+      loading.value = true
+      const params: Api.Auth.ForgetPwdParams = {
+        email: form.value.email,
+        redirectTo: location.origin + location.pathname + '#/auth/reset-password'
+      }
+      const { error } = await forgetPassword(params)
+      if (!error) {
+        ElMessage.success('邮件已经下发到您的邮箱,请前往重置密码')
+      }
+    } finally {
+      loading.value = false
+    }
+  }
 
   const toLogin = () => {
     router.push({ name: 'Login' })

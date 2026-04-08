@@ -76,6 +76,12 @@ declare namespace Api {
       password: string
     }
 
+    /** 忘记密码参数 */
+    interface ForgetPwdParams {
+      email: string
+      redirectTo: string
+    }
+
     /** 登录响应 */
     interface LoginResponse {
       token: string
