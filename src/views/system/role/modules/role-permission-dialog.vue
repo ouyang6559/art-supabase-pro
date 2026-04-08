@@ -227,18 +227,13 @@
   }
 
   const handleSetCurrentRoleMenus = async () => {
-    try {
-      loading.value = true
-      const params = {
-        id: props.roleData?.id
-      }
-      const { data } = await getCurrentRoleMenus(params)
-      if (data) {
-        const menuIds = (data || []).map((r: any) => r.menuId)
-        treeRef.value?.setCheckedKeys(menuIds)
-      }
-    } finally {
-      loading.value = false
+    const params = {
+      id: props.roleData?.id
+    }
+    const { data } = await getCurrentRoleMenus(params as AppRouteRecord)
+    if (data) {
+      const menuIds = (data || []).map((r: any) => r.menuId)
+      treeRef.value?.setCheckedKeys(menuIds)
     }
   }
 </script>

@@ -185,7 +185,7 @@
     account: '',
     username: '',
     email: '624944977@qq.com',
-    password: 'wang3763237',
+    password: '123456',
     rememberPassword: true
   })
 
