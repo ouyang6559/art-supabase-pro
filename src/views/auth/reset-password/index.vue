@@ -68,6 +68,7 @@
 
   const { t } = useI18n()
   const router = useRouter()
+  const route = useRoute()
 
   const loading = ref(false)
 
@@ -126,13 +127,100 @@
 
   const handleSubmit = async () => {
     await formRef.value?.validate()
-    const params: Pick<Api.Auth.RegisterParams, 'password'> = {
-      password: form.value.password
+    try {
+      loading.value = true
+      const { access_token: accessToken, refresh_token: refreshToken = '' } =
+        parseSupabaseResetParams() as any
+      if (!accessToken) {
+        throw new Error('无效或已过期的重置链接')
+      }
+      const params: Api.Auth.ResetPwdParams = {
+        password: form.value.password,
+        accessToken,
+        refreshToken
+      }
+      const { error } = await resetPassword(params)
+      if (!error) {
+        ElMessage.success('密码重置成功,请前往登录')
+        toLogin()
+      }
+    } finally {
+      loading.value = false
     }
-    const { error } = await resetPassword(params)
-    if (!error) {
-      ElMessage.success('密码重置成功,请前往登录')
-      toLogin()
+  }
+
+  /**
+   * 解析 Vue hash 路由 + Supabase token 的复杂 URL
+   * @returns {Object} 包含 access_token, expires_at, type 等参数
+   */
+  const parseSupabaseResetParams = () => {
+    // 获取完整 hash，例如 "#/auth/reset-password#access_token=eyJhbGci..."
+    const fullHash = window.location.hash
+
+    console.log('完整 hash:', fullHash)
+
+    // 查找最后一个 '#' 的位置
+    const lastHashIndex = fullHash.lastIndexOf('#')
+
+    if (lastHashIndex === -1 || lastHashIndex === fullHash.length - 1) {
+      console.error('无效的重置链接格式')
+      return null
+    }
+
+    // 提取真正的查询参数部分
+    // 例如: "#access_token=eyJhbGci..." -> "access_token=eyJhbGci..."
+    const paramsPart = fullHash.substring(lastHashIndex + 1)
+
+    console.log('参数部分:', paramsPart)
+
+    try {
+      // 使用 URLSearchParams 解析
+      const params = new URLSearchParams(paramsPart)
+
+      // 提取关键参数
+      const accessToken = params.get('access_token')
+      const type = params.get('type')
+      const expiresAt = params.get('expires_at')
+      const refreshToken = params.get('refresh_token')
+
+      console.log('解析结果:', {
+        access_token: accessToken,
+        type,
+        expires_at: expiresAt,
+        refresh_token: refreshToken
+      })
+
+      // 验证必要参数
+      if (!accessToken || !type) {
+        console.error('缺少必要的重置参数')
+        return null
+      }
+
+      // 检查是否为重置密码类型
+      if (type !== 'recovery') {
+        console.error('不是重置密码链接，类型:', type)
+        return null
+      }
+
+      // 检查过期时间
+      if (expiresAt) {
+        const expiresTimestamp = parseInt(expiresAt) * 1000 // 转换为毫秒
+        if (Date.now() > expiresTimestamp) {
+          console.error('重置链接已过期')
+          return null
+        }
+      }
+
+      return {
+        access_token: accessToken,
+        type,
+        expires_at: expiresAt,
+        refresh_token: refreshToken,
+        allParams: Object.fromEntries(params.entries())
+      }
+    } catch (error) {
+      console.error('解析参数失败:', error)
+      return null
     }
   }
 

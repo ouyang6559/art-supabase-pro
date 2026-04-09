@@ -53,12 +53,15 @@ export async function forgetPassword(params: Api.Auth.ForgetPwdParams) {
 }
 
 /*重置密码*/
-export async function resetPassword(params: Pick<Api.Auth.RegisterParams, 'password'>) {
-  const { password } = params
-  const { data, error } = await supabase.auth.getSession()
-  if (error || !data.session) {
-    throw new Error('无效或已过期的重置链接')
-  }
+export async function resetPassword(params: Api.Auth.ResetPwdParams) {
+  const { password, accessToken, refreshToken } = params
+
+  // 设置访问 token
+  await supabase.auth.setSession({
+    access_token: accessToken,
+    refresh_token: refreshToken || ''
+  })
+
   return await responseHandle(
     () =>
       supabase.auth.updateUser({

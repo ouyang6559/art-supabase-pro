@@ -82,6 +82,13 @@ declare namespace Api {
       redirectTo: string
     }
 
+    /** 重置密码参数 */
+    interface ResetPwdParams {
+      password: string
+      accessToken: string
+      refreshToken?: string
+    }
+
     /** 登录响应 */
     interface LoginResponse {
       token: string

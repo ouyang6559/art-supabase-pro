@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8f35119-660a-46e7-82f4-53eee06863eb" name="Changes" comment="fix change default pwd in Login page">
-      <change afterPath="$PROJECT_DIR$/src/views/auth/reset-password/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+    <list default="true" id="b8f35119-660a-46e7-82f4-53eee06863eb" name="Changes" comment="feat reset pwd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/langs/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/langs/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/langs/zh.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/langs/zh.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes/staticRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes/staticRoutes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/api/api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/api/api.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/auth/forget-password/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/auth/forget-password/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/auth/reset-password/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/auth/reset-password/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775620432279</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat reset pwd">
+      <option name="closed" value="true" />
+      <created>1775640884451</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1775640884451</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +464,8 @@
     <MESSAGE value="fix eslint error" />
     <MESSAGE value="merge &#10;version : 3.0.2&#10;date : 2026/03/23" />
     <MESSAGE value="fix change default pwd in Login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix change default pwd in Login page" />
+    <MESSAGE value="feat reset pwd" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat reset pwd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
